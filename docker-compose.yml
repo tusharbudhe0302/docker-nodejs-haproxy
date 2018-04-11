@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+    webclient:
+        image: webclient
+        container_name: webclient
+        environment:
+            - NODE_CLIENT_PORT=81
+        build:
+            context: .
+            dockerfile: .docker/client.dockerfile
+        ports:
+            - "81:80"
+    webserver:
+        image: webserver
+        container_name: webserver
+        environment:
+            - NODE_SERVER_PORT=82
+        build:
+            context: .
+            dockerfile: .docker/server.dockerfile
+        ports:
+            - "82:82"
+    haproxy:
+        image: haproxy
+        container_name: haproxy
+        build: ./haproxy
+        depends_on:
+            - webclient
+            - webserver
+        volumes:
+            - logging:/sidecar
+        ports:
+            - "80:80"
+
+    syslog-sidecar:
+        build: ./logging
+        container_name: logging
+        volumes:
+            - logging:/sidecar
+
+volumes:
+    logging:

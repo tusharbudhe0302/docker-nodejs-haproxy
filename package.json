@@ -1,0 +1,15 @@
+{
+  "name": "docker-happroxy",
+  "version": "1.0.0",
+  "description": "haproxy",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-ui":"node webappclient.js",
+    "start-api":"node webappserver.js"
+  },
+  "author": "Tushar Budhe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
