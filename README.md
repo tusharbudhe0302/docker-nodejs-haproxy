@@ -5,7 +5,7 @@ Docker with haproxy by building cutom nodejs image and app is running on differe
 
 `git clone https://github.com/tusharbudhe0302/nodejshaproxy.git`
 
-`cd nodejshaproxy`
+`cd docker-nodejs-haproxy`
 
 ` docker-compose up --build `
 
