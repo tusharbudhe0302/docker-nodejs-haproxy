@@ -3,7 +3,7 @@ Docker with haproxy by building cutom nodejs image and app is running on differe
 
 ## Command
 
-`git clone https://github.com/tusharbudhe0302/nodejshaproxy.git`
+`git clone https://github.com/tusharbudhe0302/docker-nodejs-haproxy.git`
 
 `cd docker-nodejs-haproxy`
 
